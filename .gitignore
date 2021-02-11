@@ -12,12 +12,42 @@
 /.next/
 /out/
 
-# production
+# compiled output
+/dist
+/tmp
+/out-tsc
 /build
 
+# profiling files
+chrome-profiler-events*.json
+speed-measure-plugin*.json
+
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history/*
+
 # misc
-.DS_Store
 *.pem
+/.sass-cache
+/connect.lock
+/libpeerconnection.log
+npm-debug.log
+yarn-error.log
+testem.log
+/typings
 
 # debug
 npm-debug.log*
@@ -32,3 +62,7 @@ yarn-error.log*
 
 # vercel
 .vercel
+
+# System Files
+.DS_Store
+Thumbs.db
