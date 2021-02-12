@@ -1,4 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
+
+import { Temtem } from "../../models/temtem";
+import { useFetch } from "../../hooks/useFetch";
 
 import {
   Container,
@@ -8,24 +11,21 @@ import {
   CreatureName,
   CreatureTypes
 } from "./styles";
-import { Temtem } from "../../models/temtem";
 
 const Creatures: React.FC = () => {
-  const [creatures, setCreatures] = useState<Temtem[]>([]);
+  const { data } = useFetch<Temtem[]>("temtems");
 
-  useEffect(() => {
-    fetch(
-      "https://raw.githubusercontent.com/maael/temtem-api/master/data/knownTemtemSpecies.json"
-    )
-      .then(res => res.json())
-      .then((response: Temtem[]) => {
-        setCreatures(response.filter(c => c.wikiRenderStaticUrl));
-      });
-  }, []);
+  if (!data) {
+    return (
+      <Container>
+        <p>Carregando...</p>
+      </Container>
+    );
+  }
 
   return (
     <Container>
-      {creatures.map(creature => (
+      {data.map(creature => (
         <Creature key={creature.number} href={creature.wikiUrl} target="_blank">
           <CreatureImage src={creature.wikiPortraitUrlLarge} />
           <CreatureNumber>{creature.number}</CreatureNumber>
