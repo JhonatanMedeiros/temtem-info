@@ -25,6 +25,22 @@ export const Creature = styled.a`
   text-decoration: none;
   background-color: transparent;
 
+  @media (max-width: 576px) {
+    width: 50%;
+  }
+
+  @media (min-width: 576px) {
+    width: 50%;
+  }
+
+  @media (min-width: 768px) {
+    width: 33.33%;
+  }
+
+  @media (min-width: 992px) {
+    width: 20%;
+  }
+
   &:hover {
     background-color: #fcc56b;
   }

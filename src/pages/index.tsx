@@ -1,7 +1,8 @@
 import React from "react";
 import styled from "styled-components";
+import { Col, Container, Row } from "react-bootstrap";
 
-import { Container } from "../styles/pages/Home";
+import { ContainerHome } from "../styles/pages/Home";
 import Creatures from "../components/Creatures";
 import Footer from "../components/Footer";
 
@@ -13,9 +14,15 @@ const Title = styled.h1`
 const Home: React.FC = () => {
   return (
     <Container>
-      <Title>Temtem Info</Title>
-      <Creatures />
-      <Footer />
+      <Row>
+        <Col>
+          <ContainerHome>
+            <Title>Temtem Info</Title>
+            <Creatures />
+            <Footer />
+          </ContainerHome>
+        </Col>
+      </Row>
     </Container>
   );
 };
