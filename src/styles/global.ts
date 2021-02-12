@@ -7,8 +7,13 @@ export default createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    background: ${props => props.theme.colors.background};
+    background-color: ${props => props.theme.colors.background};
     color: ${props => props.theme.colors.text};
     font: 400 16px Roboto, sans-serif;
+    background-image: url("/temtem_background.jpg");
+    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
   }
 `;
