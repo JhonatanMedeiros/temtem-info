@@ -41,7 +41,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="pt">
         <Head>
-          <title>Temtem Info</title>
+          <title>Temtem Info | Database and Guide</title>
           <meta charSet="utf-8" />
 
           <link

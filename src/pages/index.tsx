@@ -1,29 +1,29 @@
 import React from "react";
-import styled from "styled-components";
+import Head from "next/head";
 import { Col, Container, Row } from "react-bootstrap";
 
 import { ContainerHome } from "../styles/pages/Home";
-import Creatures from "../components/Creatures";
 import Footer from "../components/Footer";
-
-const Title = styled.h1`
-  font-size: 50px;
-  color: ${({ theme }) => theme.colors.primary};
-`;
+import Header from "../components/Header";
 
 const Home: React.FC = () => {
   return (
-    <Container>
-      <Row>
-        <Col>
-          <ContainerHome>
-            <Title>Temtem Info</Title>
-            <Creatures />
-            <Footer />
-          </ContainerHome>
-        </Col>
-      </Row>
-    </Container>
+    <>
+      <Head>
+        <title>Temtem Info</title>
+      </Head>
+      <Header />
+      <Container>
+        <Row>
+          <Col>
+            <ContainerHome>
+              <h1>Index</h1>
+              <Footer />
+            </ContainerHome>
+          </Col>
+        </Row>
+      </Container>
+    </>
   );
 };
 

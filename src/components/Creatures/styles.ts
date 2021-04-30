@@ -25,6 +25,10 @@ export const Creature = styled.a`
   text-decoration: none;
   background-color: transparent;
 
+  &:hover {
+    text-decoration: none;
+  }
+
   @media (max-width: 576px) {
     width: 50%;
   }
